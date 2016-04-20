@@ -5,6 +5,9 @@ import { MySnackbar } from './MySnackbar.jsx';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from '../../../../node_modules/material-ui/styles/getMuiTheme';
 
+import { Provider } from 'react-redux';
+import { useDeps } from 'mantra-core';
+
 const styles = {
   content: {
     paddingLeft: 256,
@@ -25,7 +28,7 @@ DocHead.addMeta(metaInfo);
 const fontInfo = { name: 'link', href: 'https://fonts.googleapis.com/css?family=Roboto:400,300,500', type: 'text/css' };
 DocHead.addLink(fontInfo);
 
-export class MainLayout extends React.Component {
+class MainLayoutImpl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,6 +40,10 @@ export class MainLayout extends React.Component {
         mobileView: window.innerWidth < 1024,
       });
     };
+
+    this.props.store.subscribe(() => {
+      console.log(this.props.store.getState());
+    });
   }
 
   getChildContext() {
@@ -54,17 +61,27 @@ export class MainLayout extends React.Component {
   render() {
     return (
       <div>
-        <Sidenav />
-        <div style={!this.state.mobileView ? styles.content : styles.contentMobile}>
-          {this.props.toolbar}
-          {this.props.content}
-        </div>
-        <MySnackbar />
+        <Provider store={this.props.store}>
+          <div>
+            <Sidenav />
+            <div style={!this.state.mobileView ? styles.content : styles.contentMobile}>
+              {this.props.toolbar}
+              {this.props.content}
+            </div>
+            <MySnackbar />
+          </div>
+        </Provider>
       </div>
     );
   }
 }
 
-MainLayout.childContextTypes = {
+MainLayoutImpl.childContextTypes = {
   muiTheme: React.PropTypes.object.isRequired,
 };
+
+const depsToPropsMapper = (context, actions) => ({
+  store: context.Store,
+});
+
+export const MainLayout = useDeps(depsToPropsMapper)(MainLayoutImpl);

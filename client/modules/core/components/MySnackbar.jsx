@@ -2,7 +2,7 @@ import React from 'react';
 import Snackbar from 'material-ui/Snackbar';
 
 import { toggleSnackbar } from '../actions';
-import { useDeps } from 'mantra-core';
+import { connect } from 'react-redux';
 
 class MySnackbarImpl extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class MySnackbarImpl extends React.Component {
   }
 
   handleRequestClose() {
-    this.props.store.dispatch(toggleSnackbar(!this.props.store.getState().snackbar.snackbarOpen));
+    this.props.dispatch(toggleSnackbar(!this.props.store.getState().snackbar.snackbarOpen));
   }
 
   render() {
@@ -33,8 +33,8 @@ class MySnackbarImpl extends React.Component {
   }
 }
 
-const depsToPropsMapper = (context, actions) => ({
-  store: context.Store,
+const mapStateToProps = (state) => ({
+  snackbarOpen: state.snackbar.snackbarOpen,
 });
 
-export const MySnackbar = useDeps(depsToPropsMapper)(MySnackbarImpl);
+export const MySnackbar = connect(mapStateToProps)(MySnackbarImpl);
