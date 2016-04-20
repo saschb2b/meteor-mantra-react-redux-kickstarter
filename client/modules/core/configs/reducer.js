@@ -1,6 +1,4 @@
-const SET_USER = 'SET_USER';
-const MENU_TOGGLE = 'MENU_TOGGLE';
-const SNACKBAR_TOGGLE = 'SNACKBAR_TOGGLE';
+import { SET_USER, MENU_TOGGLE, SNACKBAR_TOGGLE } from '../actions/actionTypes.js';
 
 export function user(state = { user: null }, action) {
   switch (action.type) {
@@ -12,9 +10,6 @@ export function user(state = { user: null }, action) {
 }
 
 export function menu(state = { menuOpen: false }, action) {
-  console.log("toggle menu reducer");
-  console.log(action);
-  console.log(state);
   switch (action.type) {
     case MENU_TOGGLE:
       return Object.assign({}, state, { menuOpen: typeof action.open === 'undefined' ? !state.menuOpen : action.open });

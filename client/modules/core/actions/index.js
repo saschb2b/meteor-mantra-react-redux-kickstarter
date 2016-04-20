@@ -1,17 +1,11 @@
-const SET_USER = 'SET_USER';
-const MENU_TOGGLE = 'MENU_TOGGLE';
-const SNACKBAR_TOGGLE = 'SNACKBAR_TOGGLE';
+import { SET_USER, MENU_TOGGLE, SNACKBAR_TOGGLE } from './actionTypes.js';
 
-export const post = {
-  setUser(user) {
-    return { type: SET_USER, user };
-  },
-  toggleMenu(open) {
-    console.log("togglemenu action");
-    console.log(open);
-    return { type: MENU_TOGGLE, open };
-  },
-  toggleSnackbar(open) {
-    return { type: SNACKBAR_TOGGLE, open };
-  },
-};
+export function setUser(user) {
+  return { type: SET_USER, user };
+}
+export default function toggleMenu(open) {
+  return { type: MENU_TOGGLE, open };
+}
+export function toggleSnackbar(open) {
+  return { type: SNACKBAR_TOGGLE, open };
+}

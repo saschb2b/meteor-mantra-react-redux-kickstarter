@@ -1,6 +1,7 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import { useDeps } from 'mantra-core';
+import toggleMenu from '../actions';
 
 const styles = {
   content: {
@@ -37,9 +38,8 @@ class DefaultToolbarImpl extends React.Component {
   }
 
   toggleMenu() {
-    console.log(this.props.menuOpen);
     if (this.state.mobileView) {
-      this.props.store.dispatch(this.props.toggleMenu(this.props.menuOpen));
+      this.props.store.dispatch(toggleMenu());
     }
   }
 
@@ -51,7 +51,7 @@ class DefaultToolbarImpl extends React.Component {
           title={this.props.title}
           titleStyle={styles.title}
           onLeftIconButtonTouchTap={() => this.toggleMenu()}
-          showMenuIconButton={this.state.mobileView}
+          showMenuIconButton={true}
         />
       </div>
     );
@@ -59,9 +59,7 @@ class DefaultToolbarImpl extends React.Component {
 }
 
 const depsToPropsMapper = (context, actions) => ({
-  menuOpen: context.Store.getState().menu.menuOpen,
   store: context.Store,
-  toggleMenu: actions.post.toggleMenu,
 });
 
 export const DefaultToolbar = useDeps(depsToPropsMapper)(DefaultToolbarImpl);

@@ -17,7 +17,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.2.2",
     "react-tap-event-plugin": "^1.0.0",
-    "redux": "^3.4.0"
+    "redux": "^3.5.0"
   },
   "devDependencies": {
     "@kadira/storybook": "^1.12.0",

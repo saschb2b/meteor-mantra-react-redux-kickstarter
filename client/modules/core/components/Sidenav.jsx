@@ -18,6 +18,7 @@ import { ProfileMenu } from './ProfileMenu.jsx';
 import { List, ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import { useDeps } from 'mantra-core';
+import toggleMenu from '../actions';
 
 class SidenavImpl extends React.Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class SidenavImpl extends React.Component {
 
 
   componentDidMount() {
+    console.log(this.props);
     window.addEventListener('resize', this.handleResize);
   }
 
@@ -71,7 +73,7 @@ class SidenavImpl extends React.Component {
 
   handleClose() {
     if (this.state.mobileView) {
-      this.props.store.dispatch(this.props.toggleMenu(this.props.menuOpen));
+      this.props.store.dispatch(toggleMenu());
     }
   }
 
@@ -80,7 +82,7 @@ class SidenavImpl extends React.Component {
       <div>
         <Drawer
           docked={!this.state.mobileView}
-          open={this.state.mobileView ? this.props.menuOpen : true}
+          open={this.state.mobileView ? this.props.store.getState().menu.menuOpen : true}
           onRequestChange={() => this.handleClose()}
         >
           <ProfileMenu />
@@ -179,10 +181,7 @@ class SidenavImpl extends React.Component {
 }
 
 const depsToPropsMapper = (context, actions) => ({
-  user: context.Store.getState().user.user,
-  menuOpen: context.Store.getState().menu.menuOpen,
   store: context.Store,
-  toggleMenu: actions.post.toggleMenu,
 });
 
 export const Sidenav = useDeps(depsToPropsMapper)(SidenavImpl);

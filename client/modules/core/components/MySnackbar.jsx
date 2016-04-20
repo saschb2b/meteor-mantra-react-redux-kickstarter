@@ -16,7 +16,7 @@ class MySnackbarImpl extends React.Component {
   }
 
   handleRequestClose() {
-    this.props.store.dispatch(this.props.toggleSnackbar(!this.props.snackbarOpen));
+    this.props.store.dispatch(toggleSnackbar(!this.props.store.getState().snackbar.snackbarOpen));
   }
 
   render() {
@@ -34,9 +34,7 @@ class MySnackbarImpl extends React.Component {
 }
 
 const depsToPropsMapper = (context, actions) => ({
-  snackbarOpen: context.Store.getState().snackbar.snackbarOpen,
   store: context.Store,
-  toggleSnackbar: actions.post.toggleSnackbar,
 });
 
 export const MySnackbar = useDeps(depsToPropsMapper)(MySnackbarImpl);

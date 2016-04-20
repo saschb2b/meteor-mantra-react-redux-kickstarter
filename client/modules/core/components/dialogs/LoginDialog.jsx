@@ -155,7 +155,7 @@ class LoginDialogImpl extends React.Component {
 
 const depsToPropsMapper = (context, actions) => ({
   user: context.Store.getState().user.user,
-  snackbarOpen: actions.post.snackbarOpen,
+  snackbarOpen: actions.snackbarOpen,
 });
 
 export const LoginDialog = useDeps(depsToPropsMapper)(LoginDialogImpl);
