@@ -39,8 +39,6 @@ class SidenavImpl extends React.Component {
 
 
   componentDidMount() {
-    console.log("fghjk");
-    console.log(this.props);
     window.addEventListener('resize', this.handleResize);
   }
 

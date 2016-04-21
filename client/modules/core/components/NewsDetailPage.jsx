@@ -21,8 +21,6 @@ const newsTileData = {
 export class NewsDetailPage extends React.Component {
   constructor(props) {
     super(props);
-
-    console.log("detail");
   }
 
   render() {

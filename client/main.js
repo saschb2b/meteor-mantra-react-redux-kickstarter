@@ -20,17 +20,8 @@ const reducer = combineReducers({
   //...userReducers,
 });
 
-console.log("coreModule Reducer");
-console.log(coreModule.reducer);
-
-console.log("combined reducer");
-console.log(reducer);
-
 // Init Context
 const context = initContext({ reducer });
-
-console.log("context");
-console.log(context);
 
 // Create App
 const app = createApp(context);

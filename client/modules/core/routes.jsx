@@ -7,9 +7,7 @@ import { NewsOverview } from './components/NewsOverview.jsx';
 import { NewsDetailPage } from './components/NewsDetailPage.jsx';
 
 export default function (injectDeps, { FlowRouter }) {
-  console.log('init routes');
   const MainLayoutCtx = injectDeps(MainLayout);
-  console.log('injectedDeps');
 
   FlowRouter.route('/', {
     action() {

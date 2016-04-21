@@ -14,7 +14,6 @@ export class ProfileMenu extends React.Component {
   }
 
   componentDidMount() {
-    console.log('User ' + Meteor.user());
   }
 
   componentWillUnmount() {
