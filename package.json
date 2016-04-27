@@ -4,20 +4,21 @@
   "description": "",
   "main": "mobile-config.js",
   "dependencies": {
+    "@kadira/storybook": "^1.19.0",
     "babel-cli": "^6.7.5",
     "load-script": "^1.0.0",
     "mantra-core": "^1.5.0",
-    "material-ui": "^0.15.0-beta.1",
+    "material-ui": "^0.15.0-beta.2",
     "meteor-node-stubs": "^0.2.3",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "react-helmet": "^3.0.1",
+    "react-helmet": "^3.1.0",
     "react-komposer": "^1.8.0",
     "react-mounter": "^1.2.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.2.2",
     "react-tap-event-plugin": "^1.0.0",
-    "redux": "^3.5.0"
+    "redux": "^3.5.2"
   },
   "devDependencies": {
     "@kadira/storybook": "^1.12.0",
