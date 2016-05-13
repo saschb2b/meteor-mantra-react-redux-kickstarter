@@ -65,12 +65,10 @@ class NewsOverviewImpl extends React.Component {
   }
 
   render() {
-    console.log(this.props.flowRouter)
-
     return (
       <div className="newsOverview" style={styles.root}>
-        {newsTileData.map(tile => (
-          <Card style={styles.card}>
+        {newsTileData.map((tile, i) => (
+          <Card key={i} style={styles.card}>
             <CardMedia>
               <img style={styles.cardImage} src={tile.image}/>
             </CardMedia>
