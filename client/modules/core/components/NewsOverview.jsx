@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardActions, CardMedia, CardTitle, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import { useDeps } from 'mantra-core';
 
 const styles = {
   root: {
@@ -54,12 +55,18 @@ const newsTileData = [
   },
 ];
 
-export class NewsOverview extends React.Component {
+class NewsOverviewImpl extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  handleNewsClick(){
+    this.props.flowRouter.go("/news/1")
+  }
+
   render() {
+    console.log(this.props.flowRouter)
+
     return (
       <div className="newsOverview" style={styles.root}>
         {newsTileData.map(tile => (
@@ -72,8 +79,7 @@ export class NewsOverview extends React.Component {
             <CardActions style={styles.cardAction}>
               <FlatButton
                 label="Mehr"
-                linkButton={true}
-                href="/news/1"
+                onTouchTap={() => this.handleNewsClick()}
               />
             </CardActions>
           </Card>
@@ -82,3 +88,9 @@ export class NewsOverview extends React.Component {
     );
   }
 }
+
+const depsToPropsMapper = (context, actions) => ({
+  flowRouter: context.FlowRouter
+});
+
+export const NewsOverview = useDeps(depsToPropsMapper)(NewsOverviewImpl);

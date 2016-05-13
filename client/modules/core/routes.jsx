@@ -8,6 +8,7 @@ import { NewsDetailPage } from './components/NewsDetailPage.jsx';
 
 export default function (injectDeps, { FlowRouter }) {
   const MainLayoutCtx = injectDeps(MainLayout);
+  const NewsOverviewCtx = injectDeps(NewsOverview);
 
   FlowRouter.route('/', {
     action() {
@@ -21,7 +22,7 @@ export default function (injectDeps, { FlowRouter }) {
     action() {
       mount(MainLayoutCtx, {
         toolbar: <DefaultToolbar title="News" />,
-        content: <NewsOverview />,
+        content: <NewsOverviewCtx />,
       });
     },
   });
