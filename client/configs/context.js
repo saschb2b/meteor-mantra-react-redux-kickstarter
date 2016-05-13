@@ -4,7 +4,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 // Redux
 import { createStore } from 'redux';
 
-const defaultState = { time: new Date().toString() };
+const defaultState = {};
 
 export default function ({ reducer }) {
   return {
