@@ -1,12 +1,11 @@
-import React from 'react';
-import Snackbar from 'material-ui/Snackbar';
-
-import { toggleSnackbar } from '../actions';
-import { connect } from 'react-redux';
+import React from 'react'
+import { connect } from 'react-redux'
+import Snackbar from 'material-ui/Snackbar'
+import { toggleSnackbar } from '../actions'
 
 class MySnackbarImpl extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   componentDidMount() {
@@ -16,7 +15,7 @@ class MySnackbarImpl extends React.Component {
   }
 
   handleRequestClose() {
-    this.props.dispatch(toggleSnackbar(!this.props.store.getState().snackbar.snackbarOpen));
+    this.props.dispatch(toggleSnackbar(!this.props.store.getState().snackbar.snackbarOpen))
   }
 
   render() {
@@ -29,12 +28,12 @@ class MySnackbarImpl extends React.Component {
           onRequestClose={() => this.handleRequestClose()}
         />
       </div>
-    );
+    )
   }
 }
 
 const mapStateToProps = (state) => ({
-  snackbarOpen: state.snackbar.snackbarOpen,
-});
+  snackbarOpen: state.snackbar.snackbarOpen
+})
 
-export const MySnackbar = connect(mapStateToProps)(MySnackbarImpl);
+export const MySnackbar = connect(mapStateToProps)(MySnackbarImpl)

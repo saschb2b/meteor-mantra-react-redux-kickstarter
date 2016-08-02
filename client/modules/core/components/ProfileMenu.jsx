@@ -1,16 +1,15 @@
-import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-
-import { LoginDialog } from './dialogs/LoginDialog.jsx';
-import { RegistrationDialog } from './dialogs/RegistrationDialog.jsx';
+import React from 'react'
+import RaisedButton from 'material-ui/RaisedButton'
+import { LoginDialog } from './dialogs/LoginDialog.jsx'
+import { RegistrationDialog } from './dialogs/RegistrationDialog.jsx'
 
 export class ProfileMenu extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       loginOpen: false,
-      registerOpen: false,
-    };
+      registerOpen: false
+    }
   }
 
   componentDidMount() {
@@ -20,19 +19,19 @@ export class ProfileMenu extends React.Component {
   }
 
   onLoginCancel() {
-    this.setState({ loginOpen: false });
+    this.setState({ loginOpen: false })
   }
 
   onRegisterCancel() {
-    this.setState({ registerOpen: false });
+    this.setState({ registerOpen: false })
   }
 
   registerOpen() {
-    this.setState({ registerOpen: true });
+    this.setState({ registerOpen: true })
   }
 
   loginOpen() {
-    this.setState({ loginOpen: true });
+    this.setState({ loginOpen: true })
   }
 
   render() {
@@ -63,6 +62,6 @@ export class ProfileMenu extends React.Component {
           onRequestClose={() => this.onRegisterCancel()}
         />
       </div>
-    );
+    )
   }
 }

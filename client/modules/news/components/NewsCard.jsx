@@ -1,34 +1,34 @@
-import React from 'react';
+import React from 'react'
 import { Card, CardActions, CardMedia, CardTitle, CardText } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import FlatButton from 'material-ui/FlatButton'
 
 const styles = {
   card: {
     width: 300,
     marginBottom: 24,
-    position: 'relative',
+    position: 'relative'
   },
   cardImage: {
-    height: 200,
+    height: 200
   },
   cardText: {
-    marginBottom: 52,
+    marginBottom: 52
   },
   cardAction: {
     position: 'absolute',
     right: 0,
-    bottom: 0,
-  },
-};
+    bottom: 0
+  }
+}
 
 export class NewsCard extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
     return (
-      <div className="newsCard">
+      <div>
         <Card style={styles.card}>
           <CardMedia>
             <img
@@ -48,7 +48,7 @@ export class NewsCard extends React.Component {
           </CardActions>
         </Card>
       </div>
-    );
+    )
   }
 }
 
@@ -56,5 +56,5 @@ NewsCard.proptypes = {
   title: React.PropTypes.string,
   subtitle: React.PropTypes.string,
   image: React.PropTypes.string,
-  text: React.PropTypes.string,
-};
+  text: React.PropTypes.string
+}

@@ -1,15 +1,14 @@
-import React from 'react';
+import React from 'react'
 
 export class Home extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
     return (
-      <div className="home">
+      <div>
         <h1>HTML Ipsum Presents</h1>
-
         <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis
           egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
           amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit
@@ -36,6 +35,6 @@ export class Home extends React.Component {
           <li>Aliquam tincidunt mauris eu risus.</li>
         </ul>
       </div>
-    );
+    )
   }
 }

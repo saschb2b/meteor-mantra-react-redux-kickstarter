@@ -1,5 +1,6 @@
 {
   "globals": {
+    "Meteor": true,
     "Kadira": true,
     "Roles": true,
     "DocHead": true,

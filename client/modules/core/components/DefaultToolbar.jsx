@@ -1,8 +1,7 @@
-import React from 'react';
-import AppBar from 'material-ui/AppBar';
-
-import { connect } from 'react-redux';
-import toggleMenu from '../actions';
+import React from 'react'
+import AppBar from 'material-ui/AppBar'
+import { connect } from 'react-redux'
+import toggleMenu from '../actions'
 
 const styles = {
   content: {
@@ -11,23 +10,23 @@ const styles = {
     height: 300,
     backgroundSize: 'cover',
     backgroundPosition: '50% 50%',
-    backgroundImage: 'url(http://lorempixel.com/1600/300/nature)',
+    backgroundImage: 'url(http://lorempixel.com/1600/300/nature)'
   },
-  title: {},
-};
+  title: {}
+}
 
 class DefaultToolbarImpl extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      mobileView: window.innerWidth < 1024,
-    };
+      mobileView: window.innerWidth < 1024
+    }
 
     this.handleResize = () => {
       this.setState({
-        mobileView: window.innerWidth < 1024,
-      });
-    };
+        mobileView: window.innerWidth < 1024
+      })
+    }
   }
 
   componentDidMount() {
@@ -40,7 +39,7 @@ class DefaultToolbarImpl extends React.Component {
 
   toggleMenu() {
     if (this.state.mobileView) {
-      this.props.dispatch(toggleMenu());
+      this.props.dispatch(toggleMenu())
     }
   }
 
@@ -52,13 +51,13 @@ class DefaultToolbarImpl extends React.Component {
           title={this.props.title}
           titleStyle={styles.title}
           onLeftIconButtonTouchTap={() => this.toggleMenu()}
-          showMenuIconButton={true}
+          showMenuIconButton
         />
       </div>
-    );
+    )
   }
 }
 const mapStateToProps = (state) => ({
-});
+})
 
-export const DefaultToolbar = connect(mapStateToProps)(DefaultToolbarImpl);
+export const DefaultToolbar = connect(mapStateToProps)(DefaultToolbarImpl)

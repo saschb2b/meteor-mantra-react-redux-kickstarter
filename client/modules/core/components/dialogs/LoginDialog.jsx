@@ -1,31 +1,28 @@
-import React from 'react';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
-import TextField from 'material-ui/TextField';
-import Snackbar from 'material-ui/Snackbar';
-
-import { connect } from 'react-redux';
-import { setUser, toggleSnackbar } from '../../actions/index';
-import { useDeps } from 'mantra-core';
+import React from 'react'
+import Dialog from 'material-ui/Dialog'
+import FlatButton from 'material-ui/FlatButton'
+import TextField from 'material-ui/TextField'
+import Snackbar from 'material-ui/Snackbar'
+import { useDeps } from 'mantra-core'
 
 const style = {
   backgroundSize: 'cover',
   backgroundPosition: '50% 50%',
-  backgroundImage: 'url(http://lorempixel.com/1920/1080/)',
-};
+  backgroundImage: 'url(http://lorempixel.com/1920/1080/)'
+}
 
 const customContentStyle = {
   // width: '95%',
-  maxWidth: '300px',
-};
+  maxWidth: '300px'
+}
 
 class LoginDialogImpl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       errorOpen: false,
-      errorMessage: '',
-    };
+      errorMessage: ''
+    }
   }
 
   componentDidMount() {
@@ -33,19 +30,18 @@ class LoginDialogImpl extends React.Component {
 
   emailChange(event) {
     this.setState({
-      email: event.target.value,
-    });
+      email: event.target.value
+    })
   }
 
   passwordChange(event) {
     this.setState({
-      password: event.target.value,
-    });
+      password: event.target.value
+    })
   }
 
   login() {
-    console.log('Email: ' + this.state.email + ' password: ' + this.state.password);
-
+    console.log('Email: ' + this.state.email + ' password: ' + this.state.password)
     // Meteor.loginWithPassword(this.state.email, this.state.password, (error) => this.loginCallback(error));
     /*
      if(error){
@@ -59,14 +55,14 @@ class LoginDialogImpl extends React.Component {
 
   loginCallback(error) {
     if (error) {
-      console.log(error);
+      console.log(error)
       // this.props.dispatch(toggleSnackbar(!this.props.snackbarOpen));
       /* this.setState({
        errorOpen: true,
        errorMessage: "test"
        });*/
     } else {
-      console.log('Success');
+      console.log('Success')
       // this.props.dispatch(setUser(Meteor.user()));
     }
   }
@@ -76,22 +72,22 @@ class LoginDialogImpl extends React.Component {
 
   checkValid() {
     if (this.state.email !== '' && this.state.email !== ' ') {
-      this.enableButton();
+      this.enableButton()
     } else {
-      this.disableButton();
+      this.disableButton()
     }
   }
 
   enableButton() {
     this.setState({
-      canSubmit: true,
-    });
+      canSubmit: true
+    })
   }
 
   disableButton() {
     this.setState({
-      canSubmit: false,
-    });
+      canSubmit: false
+    })
   }
 
   render() {
@@ -103,11 +99,11 @@ class LoginDialogImpl extends React.Component {
       <FlatButton
         type="submit"
         label="Login"
-        secondary={true}
+        secondary
         onMouseUp={() => this.login()}
         // disabled={!this.state.canSubmit}
-      />,
-    ];
+      />
+    ]
 
     return (
       <div className="loginDialog">
@@ -149,13 +145,13 @@ class LoginDialogImpl extends React.Component {
           onRequestClose={(event) => this.handleRequestClose(event)}
         />
       </div>
-    );
+    )
   }
 }
 
 const depsToPropsMapper = (context, actions) => ({
   user: context.Store.getState().user.user,
-  snackbarOpen: actions.snackbarOpen,
-});
+  snackbarOpen: actions.snackbarOpen
+})
 
-export const LoginDialog = useDeps(depsToPropsMapper)(LoginDialogImpl);
+export const LoginDialog = useDeps(depsToPropsMapper)(LoginDialogImpl)
