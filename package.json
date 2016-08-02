@@ -29,7 +29,6 @@
     "babel-plugin-react-transform": "^2.0.2",
     "babel-polyfill": "6.x.x",
     "babel-preset-es2015": "6.x.x",
-    "babel-preset-meteor": "^6.6.7",
     "babel-preset-react": "6.x.x",
     "babel-preset-stage-2": "6.x.x",
     "babel-root-slash-import": "1.x.x",

@@ -1,6 +1,5 @@
 {
   "presets": [
-    "meteor",
     "es2015"
   ],
   "plugins": [
