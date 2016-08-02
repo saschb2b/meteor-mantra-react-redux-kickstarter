@@ -89,19 +89,19 @@ class SidenavImpl extends React.Component {
           <List>
             <ListItem
               leftIcon={<DashboardIcon />}
-              linkButton={true} href="/news"
+              href="/news"
               primaryText="News"
               onTouchTap={() => this.handleClose()}
             />
             <ListItem
               leftIcon={<LibraryBooksIcon />}
-              linkButton={true} href="/item2"
+              href="/item2"
               primaryText="Item 2"
               onTouchTap={() => this.handleClose()}
             />
             <ListItem
               leftIcon={<WorkIcon />}
-              linkButton={true} href="/item3"
+              href="/item3"
               primaryText="Item 3"
               onTouchTap={() => this.handleClose()}
               initiallyOpen={false}
@@ -109,21 +109,21 @@ class SidenavImpl extends React.Component {
               nestedItems={[
                 <ListItem
                     leftIcon={<ForumIcon />}
-                    linkButton={true} href="/item3/subitem1"
+                    href="/item3/subitem1"
                     primaryText="Subitem 1"
                     key={1}
                     onTouchTap={() => this.handleClose()}
                 />,
                 <ListItem
                     leftIcon={<ViewAgendaIcon />}
-                    linkButton={true} href="/item3/subitem1"
+                    href="/item3/subitem1"
                     primaryText="Subitem 2"
                     key={2}
                     onTouchTap={() => this.handleClose()}
                 />,
                 <ListItem
                     leftIcon={<HourglassEmptyIcon />}
-                    linkButton={true} href="/item3/subitem1"
+                    href="/item3/subitem1"
                     primaryText="Subitem 3"
                     key={3}
                     onTouchTap={() => this.handleClose()}
@@ -135,7 +135,7 @@ class SidenavImpl extends React.Component {
 
             <ListItem
               leftIcon={<EmailIcon />}
-              linkButton={true} href="/contact"
+              href="/contact"
               primaryText="Contact"
               onTouchTap={() => this.handleClose()}
             />
