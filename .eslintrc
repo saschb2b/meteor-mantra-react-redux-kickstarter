@@ -1,0 +1,42 @@
+{
+  "globals": {
+    "Kadira": true,
+    "Roles": true,
+    "DocHead": true,
+    "FlowRouter": true
+  },
+  "plugins": [
+    "meteor"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:meteor/recommended"
+    ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "meteor": true
+  },
+  "parser": "babel-eslint",
+  "parser-options": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": [
+      "error",
+      "never"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_id"
+        ]
+      }
+    ]
+  }
+}

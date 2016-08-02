@@ -26,6 +26,7 @@
   "devDependencies": {
     "@kadira/storybook": "^2.1.0",
     "babel-cli": "^6.6.5",
+    "babel-eslint": "^6.1.2",
     "babel-plugin-react-transform": "^2.0.2",
     "babel-polyfill": "6.x.x",
     "babel-preset-es2015": "6.x.x",
@@ -47,29 +48,6 @@
     "pretest": "npm run lint --silent",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9001 -s ./public"
-  },
-  "eslintConfig": {
-    "env": {
-      "meteor": true
-    },
-    "globals": {
-      "Kadira": true,
-      "Roles": true,
-      "DocHead": true,
-      "FlowRouter": true
-    },
-    "plugins": [
-      "meteor"
-    ],
-    "extends": [
-      "airbnb",
-      "plugin:meteor/recommended"
-    ],
-    "rules": {
-      "no-console": 0,
-      "prefer-template": 0,
-      "max-len": 0
-    }
   },
   "repository": {
     "type": "git",
