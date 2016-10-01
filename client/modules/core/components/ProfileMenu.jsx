@@ -1,7 +1,7 @@
 import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
-import { LoginDialog } from './dialogs/LoginDialog.jsx'
-import { RegistrationDialog } from './dialogs/RegistrationDialog.jsx'
+import { LoginDialog } from './dialogs/LoginDialog'
+import { RegistrationDialog } from './dialogs/RegistrationDialog'
 
 export class ProfileMenu extends React.Component {
   constructor(props) {

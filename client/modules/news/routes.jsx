@@ -1,9 +1,9 @@
 import React from 'react'
 import { mount } from 'react-mounter'
-import { MainLayout } from '../core/components/MainLayout.jsx'
-import { DefaultToolbar } from '../core/components/DefaultToolbar.jsx'
-import { NewsOverview } from './components/NewsOverview.jsx'
-import { NewsDetailPage } from './components/NewsDetailPage.jsx'
+import { MainLayout } from '../core/components/MainLayout'
+import { DefaultToolbar } from '../core/components/DefaultToolbar'
+import { NewsOverview } from './components/NewsOverview'
+import { NewsDetailPage } from './components/NewsDetailPage'
 
 export default function (injectDeps, { FlowRouter }) {
   const MainLayoutCtx = injectDeps(MainLayout)

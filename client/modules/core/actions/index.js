@@ -1,4 +1,4 @@
-import { SET_USER, MENU_TOGGLE, SNACKBAR_TOGGLE } from './actionTypes.js'
+import { SET_USER, MENU_TOGGLE, SNACKBAR_TOGGLE } from './actionTypes'
 
 export function setUser(user) {
   return { type: SET_USER, user }

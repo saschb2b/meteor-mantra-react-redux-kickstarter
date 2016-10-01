@@ -1,4 +1,4 @@
-import { SET_USER, MENU_TOGGLE, SNACKBAR_TOGGLE } from '../actions/actionTypes.js'
+import { SET_USER, MENU_TOGGLE, SNACKBAR_TOGGLE } from '../actions/actionTypes'
 
 export function user(state = { user: null }, action) {
   switch (action.type) {

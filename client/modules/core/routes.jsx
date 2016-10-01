@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'react-mounter'
-import { MainLayout } from './components/MainLayout.jsx'
-import { Home } from './components/Home.jsx'
+import { MainLayout } from './components/MainLayout'
+import { Home } from './components/Home'
 
 export default function (injectDeps, { FlowRouter }) {
   const MainLayoutCtx = injectDeps(MainLayout)

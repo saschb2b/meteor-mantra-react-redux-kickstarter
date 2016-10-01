@@ -2,8 +2,8 @@ import React from 'react'
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import { Provider } from 'react-redux'
 import { useDeps } from 'mantra-core'
-import { Sidenav } from './Sidenav.jsx'
-import { MySnackbar } from './MySnackbar.jsx'
+import { Sidenav } from './Sidenav'
+import { MySnackbar } from './MySnackbar'
 import getMuiTheme from '../../../../node_modules/material-ui/styles/getMuiTheme'
 
 const styles = {
