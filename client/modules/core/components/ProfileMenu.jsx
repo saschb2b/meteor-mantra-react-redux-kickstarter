@@ -1,24 +1,36 @@
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 import { RaisedButton } from 'material-ui'
 
-export default class ProfileMenu extends React.Component {
-  onLogin() {
-    console.log('login')
-    Meteor.loginWithGithub({
-      requestPermissions: ['user', 'public_repo']
-    }, (err) => {
-      if (err)
-        Session.set('errorMessage', err.reason || 'Unknown error')
-    })
-  }
-
+export default class ProfileMenu extends Component {
   render() {
+    const { user } = this.props
+
     return (
-      <RaisedButton
-        label="Login"
-        style={{ margin: 12 }}
-        onTouchTap={() => this.onLogin()}
-      />
+      <div>
+        {!user ?
+          <RaisedButton
+            label="Login"
+            style={{ margin: 12 }}
+            onTouchTap={this.props.onLogin}
+          />
+          :
+          <div>
+            <p>Hello {user.profile.name}</p>
+            <RaisedButton
+              label="Logout"
+              style={{ margin: 12 }}
+              onTouchTap={this.props.onLogout}
+            />
+          </div>
+        }
+      </div>
     )
   }
+}
+
+ProfileMenu.propTypes = {
+  user: PropTypes.object,
+  onLogin: PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
+  onProfile: PropTypes.func.isRequired
 }
