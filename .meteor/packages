@@ -15,7 +15,6 @@ tracker@1.1.0                 # Meteor's client-side reactive programming librar
 es5-shim@4.6.14                # ECMAScript 5 compatibility for older browsers.
 gadicc:ecmascript-hot@2.0.0-beta.6
 
-accounts-password@1.3.0
 constellation:console
 kadira:dochead
 random@1.0.10
@@ -23,3 +22,5 @@ standard-minifier-js@1.2.0
 standard-minifier-css@1.2.0
 kadira:flow-router
 shell-server
+accounts-github
+service-configuration
