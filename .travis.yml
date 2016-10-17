@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "6"
+  - "6.1"
+before_install:
+  - "curl -L https://raw.githubusercontent.com/arunoda/travis-ci-laika/master/configure.sh | /bin/sh"
+services:
+  - mongodb
+env:
+  - LAIKA_OPTIONS="-t 5000"
