@@ -10,7 +10,7 @@
     "babel-preset-meteor": "^6.12.0",
     "load-script": "^1.0.0",
     "mantra-core": "^1.7.0",
-    "material-ui": "^0.15.4",
+    "material-ui": "^0.16.0",
     "meteor-node-stubs": "^0.2.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",

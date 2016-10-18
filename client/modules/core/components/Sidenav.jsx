@@ -11,7 +11,7 @@ import EmailIcon from 'material-ui/svg-icons/communication/email'
 import { ImpressumDialog } from './dialogs/ImpressumDialog'
 import { AGBDialog } from './dialogs/AGBDialog'
 import { DSEDialog } from './dialogs/DSEDialog'
-import { ProfileMenu } from './ProfileMenu'
+import ProfileMenu from '../containers/ProfileMenu'
 import toggleMenu from '../actions'
 
 class SidenavImpl extends React.Component {
