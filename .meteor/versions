@@ -31,11 +31,6 @@ ecmascript-runtime@0.3.14
 ejson@1.0.12
 es5-shim@4.6.14
 fastclick@1.0.12
-gadicc:ecmascript-hot@2.0.0-beta.6
-gadicc:hot@2.0.0-beta.3
-gadicc:hot-build@2.0.0-beta.6
-gadicc:modules-runtime-hot@0.6.4-beta.1
-gadicc:package-json@1.0.4
 geojson-utils@1.0.9
 github@1.1.8
 gwendall:session-json@0.1.7
@@ -54,7 +49,6 @@ localstorage@1.0.11
 logging@1.1.15
 meteor@1.2.17
 meteor-base@1.0.4
-meteorhacks:inject-initial@1.0.4
 minifier-css@1.2.14
 minifier-js@1.2.14
 minimongo@1.0.17
@@ -69,7 +63,6 @@ oauth@1.1.11
 oauth2@1.1.10
 observe-sequence@1.0.12
 ordered-dict@1.0.8
-package-version-parser@3.0.9
 promise@0.8.7
 random@1.0.10
 rate-limit@1.0.5
@@ -78,8 +71,6 @@ reactive-var@1.0.10
 reload@1.1.10
 retry@1.0.8
 routepolicy@1.0.11
-sanjo:meteor-files-helpers@1.2.0_1
-sanjo:meteor-version@1.0.0
 service-configuration@1.0.10
 session@1.1.6
 shell-server@0.2.1

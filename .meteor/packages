@@ -13,7 +13,6 @@ jquery@1.11.9                  # Helpful client-side library
 tracker@1.1.0                 # Meteor's client-side reactive programming library
 
 es5-shim@4.6.14                # ECMAScript 5 compatibility for older browsers.
-gadicc:ecmascript-hot@2.0.0-beta.6
 
 constellation:console
 kadira:dochead
@@ -24,3 +23,4 @@ kadira:flow-router
 shell-server
 accounts-github
 service-configuration
+ecmascript
