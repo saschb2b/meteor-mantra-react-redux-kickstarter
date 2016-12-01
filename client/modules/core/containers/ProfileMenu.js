@@ -1,4 +1,6 @@
 import { composeWithTracker } from 'react-komposer'
+import { connect } from 'react-redux'
+import { toggleSnackbar } from '../actions/index'
 import ProfileMenu from '../components/ProfileMenu'
 
 function composer(props, onData) {
@@ -9,13 +11,14 @@ function composer(props, onData) {
       requestPermissions: ['user', 'public_repo']
     }, (err) => {
       if (err) {
-        Session.set('errorMessage', err.reason || 'Unknown error')
+        props.dispatch(toggleSnackbar(err.reason))
       }
     })
   }
 
   function onLogout() {
     Meteor.logout()
+    props.dispatch('Logged out')
   }
 
   function onProfile() {
@@ -30,4 +33,4 @@ function composer(props, onData) {
   })
 }
 
-export default composeWithTracker(composer)(ProfileMenu)
+export default connect()(composeWithTracker(composer)(ProfileMenu))
