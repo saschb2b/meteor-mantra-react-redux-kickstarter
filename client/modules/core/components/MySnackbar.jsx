@@ -1,39 +1,23 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React, { Component, PropTypes } from 'react'
 import Snackbar from 'material-ui/Snackbar'
-import { toggleSnackbar } from '../actions'
 
-class MySnackbarImpl extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  componentDidMount() {
-  }
-
-  componentWillUnmount() {
-  }
-
-  handleRequestClose() {
-    this.props.dispatch(toggleSnackbar(!this.props.store.getState().snackbar.snackbarOpen))
-  }
-
+export default class MySnackbar extends Component {
   render() {
     return (
       <div>
         <Snackbar
-          open={this.props.snackbarOpen}
-          message={"Change this text to something useful"}
+          open={this.props.open}
+          message={this.props.message}
           autoHideDuration={3000}
-          onRequestClose={() => this.handleRequestClose()}
+          onRequestClose={this.props.onRequestClose}
         />
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-  snackbarOpen: state.snackbar.snackbarOpen
-})
-
-export const MySnackbar = connect(mapStateToProps)(MySnackbarImpl)
+MySnackbar.propTypes = {
+  message: PropTypes.string.isRequired,
+  onRequestClose: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired
+}

@@ -1,6 +1,6 @@
 import { composeWithTracker } from 'react-komposer'
 import { connect } from 'react-redux'
-import { toggleSnackbar } from '../actions/index'
+import { toggleSnackbar } from '../actions'
 import ProfileMenu from '../components/ProfileMenu'
 
 function composer(props, onData) {
