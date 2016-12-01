@@ -59,7 +59,9 @@ class MainLayoutImpl extends React.Component {
             <Sidenav />
             <div style={!this.state.mobileView ? styles.content : { ...styles.content, ...styles.contentMobile }}>
               {this.props.toolbar}
-              {this.props.content}
+              <div style={this.props.toolbar && this.props.toolbar.props && this.props.toolbar.props.transparent ? {} : { marginTop: 64 }}>
+                {this.props.content}
+              </div>
             </div>
             <MySnackbar />
           </div>
