@@ -7,6 +7,7 @@ injectTapEventPlugin()
 
 // Modules
 import coreModule from './modules/core'
+import homeModule from './modules/home'
 import newsModule from './modules/news'
 
 
@@ -25,5 +26,6 @@ const context = initContext({ reducer })
 // Create App
 const app = createApp(context)
 app.loadModule(coreModule)
+app.loadModule(homeModule)
 app.loadModule(newsModule)
 app.init()
