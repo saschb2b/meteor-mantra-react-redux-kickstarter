@@ -8,12 +8,11 @@ import getMuiTheme from '../../../../node_modules/material-ui/styles/getMuiTheme
 
 const styles = {
   content: {
-    paddingLeft: 256,
+    paddingLeft: 0,
     height: '100%'
   },
   contentMobile: {
-    paddingLeft: 0,
-    height: '100%'
+    paddingLeft: 0
   }
 }
 
@@ -38,10 +37,6 @@ class MainLayoutImpl extends React.Component {
         mobileView: window.innerWidth < 1024
       })
     }
-
-    this.props.store.subscribe(() => {
-      console.log(this.props.store.getState())
-    })
   }
 
   getChildContext() {
@@ -58,11 +53,11 @@ class MainLayoutImpl extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ height: '100%' }}>
         <Provider store={this.props.store}>
-          <div>
+          <div style={{ height: '100%' }}>
             <Sidenav />
-            <div style={!this.state.mobileView ? styles.content : styles.contentMobile}>
+            <div style={!this.state.mobileView ? styles.content : { ...styles.content, ...styles.contentMobile }}>
               {this.props.toolbar}
               {this.props.content}
             </div>
@@ -70,7 +65,7 @@ class MainLayoutImpl extends React.Component {
           </div>
         </Provider>
       </div>
-    );
+    )
   }
 }
 

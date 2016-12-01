@@ -1,29 +1,18 @@
-body{
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,500,700';
+
+html {
+    height: 100%;
+}
+
+#react-root {
+    height: 100%;
+}
+
+body {
+    height: calc(100% - 64px);
     letter-spacing: .05em;
     line-height: 1.4em;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-}
-
-body a {
-    text-decoration:none;
-}
-
-body img {
-    border:0;
-    border-style: none;
-    outline: 0;
-}
-
-a {
-    text-decoration: none;
-    outline: 0;
-}
-
-*:focus {
-    outline: 0;
-}
-
-h2{
-    line-height: 1.6em;
+    background-color: #FAFAFA;
 }
