@@ -1,13 +1,4 @@
-import { SET_USER, MENU_TOGGLE, SNACKBAR_TOGGLE } from '../actions/actionTypes'
-
-export function user(state = { user: null }, action) {
-  switch (action.type) {
-    case SET_USER:
-      return Object.assign({}, state, { user: action.user })
-    default:
-      return state
-  }
-}
+import { MENU_TOGGLE, SNACKBAR_TOGGLE } from '../actions/actionTypes'
 
 export function menu(state = { menuOpen: false }, action) {
   switch (action.type) {
