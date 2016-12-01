@@ -8,7 +8,7 @@ import getMuiTheme from '../../../../node_modules/material-ui/styles/getMuiTheme
 
 const styles = {
   content: {
-    paddingLeft: 0,
+    paddingLeft: 256,
     height: '100%'
   },
   contentMobile: {
