@@ -5,7 +5,7 @@ aldeed:template-extension@4.0.0
 allow-deny@1.0.5
 autoupdate@1.3.12
 babel-compiler@6.13.0
-babel-runtime@0.1.13
+babel-runtime@1.0.1
 babrahams:editable-json@0.6.4
 base64@1.0.10
 binary-heap@1.0.10
@@ -25,7 +25,7 @@ ddp-rate-limiter@1.0.6
 ddp-server@1.3.11
 deps@1.0.12
 diff-sequence@1.0.7
-ecmascript@0.5.9
+ecmascript@0.6.1
 ecmascript-runtime@0.3.15
 ejson@1.0.13
 es5-shim@4.6.15
